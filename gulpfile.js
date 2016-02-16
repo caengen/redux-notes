@@ -68,7 +68,7 @@ function buildScript(file, watch) {
   var props = {
     entries: ['./' + file],
     debug : true,
-    transform:  [babelify.configure({stage : 0 }), reactify]
+    /*transform:  [babelify.configure({stage : 0 }), reactify]*/
   };
 
   var bundler = watch ? watchify(browserify(props)) : browserify(props);
