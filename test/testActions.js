@@ -5,7 +5,7 @@ import * as noteStates from '../src/constants/NoteStates';
 
 describe('actions', () => {
   afterEach(() => {
-    actions.setId(1);
+    actions.resetId();
   });
 
   it('should create an action to add a note', () => {
@@ -43,5 +43,5 @@ describe('actions', () => {
     expect(actions.deleteNote(id)).toEqual(expectedAction);
   });
 
-  it('', () => {});
+  //it('', () => {expect().toEqual()});
 });

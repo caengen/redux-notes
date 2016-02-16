@@ -2,6 +2,9 @@ import * as types from '../constants/ActionTypes';
 import * as noteStates from '../constants/NoteStates';
 
 let noteId = 1;
+export const resetId = () => {
+  setId(1);
+}
 export const setId = (id) => {
   noteId = id;
 }
