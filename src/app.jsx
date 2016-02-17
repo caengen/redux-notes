@@ -8,7 +8,7 @@ import { Notes } from './containers/Notes.jsx';
 import { Editor } from './containers/Editor.jsx';
 
 const NotesApp = () => (
-  <div className="appContainer">
+  <div className="container app">
     <Notes />
     <Editor />
   </div>

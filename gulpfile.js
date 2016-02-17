@@ -29,7 +29,7 @@ gulp.task('styles',function() {
     .pipe(gulp.dest('build/css/fonts'))*/
 
   // Compiles SCSS
-  gulp.src('./src/styles/main.scss')
+  gulp.src('src/styles/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(stylus())
     .pipe(autoprefixer())
@@ -98,6 +98,6 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('default', ['images','styles','scripts','browser-sync'], function() {
-  gulp.watch('/src/styles/**/*.scss', ['styles']);
+  gulp.watch('src/**/*.scss', ['styles']);
   return buildScript('/src/app.jsx', true);
 });

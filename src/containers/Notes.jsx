@@ -3,7 +3,7 @@ import {NotesNav} from './NotesNav.jsx';
 import {VisibleNotesList} from '../components/NotesList.jsx';
 
 export const Notes = () => (
-  <div className="notesContainer">
+  <div className="container notes">
     <NotesNav />
     <VisibleNotesList />
   </div>

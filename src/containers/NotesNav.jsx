@@ -4,7 +4,7 @@ import { FilterLink } from '../components/Link.jsx';
 import * as noteStates from '../constants/NoteStates';
 
 export const NotesNav = () => (
-  <div>
+  <div className="container notes-nav">
     <FilterLink filter={noteStates.NOTE_CREATED}>
       Notes
     </FilterLink>
