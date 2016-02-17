@@ -8,6 +8,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "body-parser": "^1.4.3",
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
     "express": "^4.4.5",
     "react": "0.14.0",
     "react-dom": "0.14.0",
@@ -65,7 +67,11 @@
       [
         "babelify",
         {
-          "presets": ["react", "es2015", "stage-0"]
+          "presets": [
+            "react",
+            "es2015",
+            "stage-0"
+          ]
         }
       ]
     ]
