@@ -5,13 +5,15 @@ import * as actions from '../actions/NoteActions';
 const Link = ({children, active, onClick}) => {
   if (active) {
     return (
-      <p>{children}</p>
+      <span className='link'>{children}</span>
     )
   }
 
   return (
-    <a href='#'
-    onClick = {e => {
+    <a
+      className='link'
+      href='#'
+      onClick = {e => {
       e.preventDefault();
       onClick();
     }}

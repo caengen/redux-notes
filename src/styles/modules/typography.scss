@@ -1,0 +1,10 @@
+$base-font-size: 16px;
+$base-font-family: 'Arial', Helvetica, sans-serif;
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 600;
+
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}

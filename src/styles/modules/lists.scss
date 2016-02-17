@@ -1,0 +1,33 @@
+@mixin ul-sidebar($bg, $text, $bg-hover, $text-hover) {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+  background: $bg;
+
+  li {
+    padding: .5em;
+    text-align: center;
+    text-decoration: none;
+    color: $text;
+
+    &:hover {
+      cursor: pointer;
+      color: $text-hover;
+      background-color: $bg-hover;
+    }
+  }
+}
+
+@mixin ul-navbar($bg, $text, $bg-hover, $text-hover) {
+  @include ul-sidebar($bg, $text, $bg-hover, $text-hover);
+  @extend .row;
+
+  li {
+    @extend .col-3;
+  }
+}
+
+@mixin ul-row-color($first, $second) {
+
+}

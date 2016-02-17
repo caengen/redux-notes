@@ -6,7 +6,7 @@ const _Editor = ({dispatch}) => {
   let input;
 
   return (
-    <section className="container editor">
+    <section className="editor">
       <textarea
         rows="5"
         cols="50"

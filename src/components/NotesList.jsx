@@ -7,7 +7,7 @@ const getVisibleNotes = (notes, visibilityFilter) => {
 }
 
 const Note = ({text, noteState, onClick}) => (
-  <li onClick={onClick}>
+  <li onClick={onClick} className="note">
     <article>
       {text}
     </article>
