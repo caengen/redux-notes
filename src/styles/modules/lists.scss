@@ -4,19 +4,6 @@
   list-style-type: none;
   overflow: hidden;
   background: $bg;
-
-  li {
-    padding: .5em;
-    text-align: center;
-    text-decoration: none;
-    color: $text;
-
-    &:hover {
-      cursor: pointer;
-      color: $text-hover;
-      background-color: $bg-hover;
-    }
-  }
 }
 
 @mixin ul-navbar($bg, $text, $bg-hover, $text-hover) {

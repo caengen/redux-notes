@@ -1,0 +1,4 @@
+.notes-list {
+  @include ul-sidebar($white, $black, $white, $black);
+  @include span-columns(12);
+}

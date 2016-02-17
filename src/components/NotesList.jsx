@@ -15,7 +15,7 @@ const Note = ({text, noteState, onClick}) => (
 )
 
 const NotesList = ({notes, onNoteClick}) => (
-  <ul className="notesList">
+  <ul className="notes-list">
     {notes.map(note =>
       /* spread applies all properties of note e.g. text={note.text} noteState={note.noteState} */
       <Note

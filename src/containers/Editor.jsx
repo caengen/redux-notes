@@ -8,8 +8,6 @@ const _Editor = ({dispatch}) => {
   return (
     <section className="editor">
       <textarea
-        rows="5"
-        cols="50"
         ref={node => {
           input = node;
         }}/>
