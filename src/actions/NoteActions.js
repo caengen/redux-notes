@@ -18,6 +18,14 @@ export const addNote = (text) => {
   }
 }
 
+export const transferNote = (id, newState) => {
+  return {
+    type: types.TRANSFER_NOTE,
+    id,
+    newState
+  }
+}
+
 export const addDraft = (text) => {
   return {
     type: types.ADD_DRAFT,
