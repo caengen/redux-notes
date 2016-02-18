@@ -20,12 +20,13 @@ const Editor = ({id, text, onAddClick}) => {
   return (
     <section className="editor">
       <textarea
-        value={text}
-
         ref={node => {
           input = node;
         }}/>
-      <button onClick={onAddClick(id, input)}>
+      <button onClick={() => {
+          if (!input) return;
+          onAddClick(id, input.value)
+        }}>
         {'Add/Edit note'}
       </button>
     </section>
@@ -42,14 +43,14 @@ const mapStateToSelectedNoteEditor = (state) => {
 
 const mapDispatchToSelectedNoteEditor = (dispatch) => {
   return {
-    onAddClick: (id, input) => {
-      if (!input) return;
+    onAddClick: (id, text) => {
+      if (!text) return;
 
       if (!id) {
-        dispatch(actions.addNote(input.value))
+        dispatch(actions.addNote(text))
       }
       else {
-        dispatch(actions.editNote(id, input.value))
+        dispatch(actions.editNote(id, text))
       }
     }
   }

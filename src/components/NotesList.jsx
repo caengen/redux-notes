@@ -2,16 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as noteStates from '../constants/NoteStates';
 import * as actions from '../actions/NoteActions';
+import marked from 'marked';
 
 const getVisibleNotes = (notes, visibilityFilter) => {
   return notes.filter(n => n.noteState === visibilityFilter);
 }
 
-const Note = ({text, noteState, onClick, onChangeState}) => (
+const createMarkup = (text) => {
+  return {
+    __html: marked(text)
+  }
+}
+
+const Note = ({markup, noteState, onClick, onChangeState}) => (
   <div className="note">
     <li onClick={onClick}>
-      <article>
-        {text}
+      <article dangerouslySetInnerHTML={markup}>
       </article>
     </li>
     <button onClick={onChangeState}>
@@ -29,6 +35,7 @@ const NotesList = ({notes, onNoteClick, onNoteChangeState}) => {
         /* spread applies all properties of note e.g. text={note.text} noteState={note.noteState} */
         return <Note
           {...note}
+          markup={createMarkup(note.text)}
           key={note.id}
           onClick={() => onNoteClick(note.id)}
           onChangeState={() => onNoteChangeState(note.id, newState)}
