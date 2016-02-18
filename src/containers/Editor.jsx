@@ -17,7 +17,7 @@ const _Editor = ({dispatch}) => {
           input = node;
         }}
         onChange={() => {
-          markedInput = marked(input.value);
+          markedInput = marked(node.value);
         }}/>
       <button onClick={() => {
           if (input.value)

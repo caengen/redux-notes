@@ -41,6 +41,13 @@ export const deleteNote = (id) => {
   }
 }
 
+export const setSelectedNote = (id) => {
+  return {
+    type: types.SET_SELECTED_NOTE,
+    id
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: types.SET_VISIBILITY_FILTER,

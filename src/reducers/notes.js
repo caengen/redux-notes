@@ -30,7 +30,16 @@ export const notes = (state = [], action) => {
         ...state.slice(0, action.id-1),
         note(state, action),
         ...state.slice(action.id)
-      ]
+      ];
+    default:
+      return state;
+  }
+}
+
+export const selectedNote = (state = 0, action) => {
+  switch (action.type) {
+    case types.SET_SELECTED_NOTE:
+      return action.id;
     default:
       return state;
   }

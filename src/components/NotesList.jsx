@@ -7,32 +7,36 @@ const getVisibleNotes = (notes, visibilityFilter) => {
   return notes.filter(n => n.noteState === visibilityFilter);
 }
 
-const Note = ({text, noteState, onClick, onDelete}) => (
-  <div>
-    <li onClick={onClick} className="note">
+const Note = ({text, noteState, onClick, onChangeState}) => (
+  <div className="note">
+    <li onClick={onClick}>
       <article>
         {text}
       </article>
     </li>
-    <button onClick={onDelete}>
-      {'Delete note'}
+    <button onClick={onChangeState}>
+      {noteState === noteStates.NOTE_CREATED ? 'Delete' : 'Restore'}
     </button>
   </div>
 )
 
-const NotesList = ({notes, onNoteClick, onNoteDelete}) => (
-  <ul className="notes-list">
-    {notes.map(note =>
-      /* spread applies all properties of note e.g. text={note.text} noteState={note.noteState} */
-      <Note
-        {...note}
-        key={note.id}
-        onClick={() => onNoteClick(note.id)}
-        onDelete={() => onNoteDelete(note.id, noteStates.NOTE_DELETED)}
-      />
-    )}
-  </ul>
-)
+const NotesList = ({notes, onNoteClick, onNoteChangeState}) => {
+
+  return (
+    <ul className="notes-list">
+      {notes.map(note => {
+        const newState = note.noteState === noteStates.NOTE_CREATED ? noteStates.NOTE_DELETED : noteStates.NOTE_CREATED;
+        /* spread applies all properties of note e.g. text={note.text} noteState={note.noteState} */
+        return <Note
+          {...note}
+          key={note.id}
+          onClick={() => onNoteClick(note.id)}
+          onChangeState={() => onNoteChangeState(note.id, newState)}
+        />
+      })}
+    </ul>
+  )
+}
 
 const mapStateToVisibleNotesListProps = (state) => {
   return {
@@ -48,7 +52,7 @@ const mapDispatchToVisibleNotesListProps = (dispatch) => {
     onNoteClick: (id) => {
       //dispatch({});
     },
-    onNoteDelete: (id, newState) => {
+    onNoteChangeState: (id, newState) => {
       dispatch(actions.transferNote(id, newState));
     }
   }
