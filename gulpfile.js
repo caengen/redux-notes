@@ -18,13 +18,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var historyApiFallback = require('connect-history-api-fallback');
 
-/*
-  Styles Task
-*/
-
 gulp.task('styles',function() {
   // move over fonts
-
   /*gulp.src('css/fonts/**.*')
     .pipe(gulp.dest('build/css/fonts'))*/
 
@@ -37,10 +32,6 @@ gulp.task('styles',function() {
     .pipe(reload({stream:true}));
 });
 
-/*
-  Images
-*/
-
 gulp.task('images',function(){
   //gulp.src('./src/vectors')
   //  .pipe(gulp.dest('./build/vectors'));
@@ -48,7 +39,6 @@ gulp.task('images',function(){
 
 gulp.task('browser-sync', function() {
     browserSync({
-        // we need to disable clicks and forms for when we test multiple rooms
         proxy : 'http://localhost:3000',
         middleware : [ historyApiFallback() ],
         ghostMode : false,
@@ -68,7 +58,6 @@ function buildScript(file, watch) {
   var props = {
     entries: ['./' + file],
     debug : true,
-    /*transform:  [babelify.configure({stage : 0 }), reactify]*/
   };
 
   var bundler = watch ? watchify(browserify(props)) : browserify(props);

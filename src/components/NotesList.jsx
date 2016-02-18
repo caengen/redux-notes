@@ -50,7 +50,7 @@ const mapStateToVisibleNotesListProps = (state) => {
 const mapDispatchToVisibleNotesListProps = (dispatch) => {
   return {
     onNoteClick: (id) => {
-      //dispatch({});
+      dispatch(actions.setSelectedNote(id));
     },
     onNoteChangeState: (id, newState) => {
       dispatch(actions.transferNote(id, newState));

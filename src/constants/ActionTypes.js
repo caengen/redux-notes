@@ -1,5 +1,6 @@
 export const ADD_DRAFT = 'ADD_DRAFT';
 export const ADD_NOTE = 'ADD_NOTE';
+export const EDIT_NOTE = 'EDIT_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const SET_SELECTED_NOTE = 'SET_SELECTED_NOTE';
 export const TRANSFER_NOTE = 'TRANSFER_NOTE';

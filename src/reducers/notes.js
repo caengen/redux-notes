@@ -7,12 +7,17 @@ const note = (state, action) => {
         id: action.id,
         noteState: action.noteState,
         text: action.text
-      }
+      };
     case types.TRANSFER_NOTE:
       return {
         ...state[action.id-1],
         noteState: action.newState
-      }
+      };
+    case types.EDIT_NOTE:
+      return {
+        ...state[action.id-1],
+        text: action.text
+      };
     default:
       return state;
   }
@@ -26,6 +31,12 @@ export const notes = (state = [], action) => {
         note(undefined, action)
       ];
     case types.TRANSFER_NOTE:
+      return [
+        ...state.slice(0, action.id-1),
+        note(state, action),
+        ...state.slice(action.id)
+      ];
+    case types.EDIT_NOTE:
       return [
         ...state.slice(0, action.id-1),
         note(state, action),
