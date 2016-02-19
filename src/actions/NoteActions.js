@@ -56,6 +56,13 @@ export const setSelectedNote = (id) => {
   }
 }
 
+export const updateNotePreview = (text) => {
+  return {
+    type: types.UPDATE_NOTE_PREVIEW,
+    text
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: types.SET_VISIBILITY_FILTER,

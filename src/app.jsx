@@ -1,6 +1,6 @@
 import React from 'react';
 import DOM from 'react-dom';
-import { notes, selectedNote } from './reducers/notes';
+import { notes, selectedNote, notePreview } from './reducers/notes';
 import { visibilityFilter } from './reducers/visibilityFilter';
 import { Provider, connect } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
@@ -14,7 +14,12 @@ const NotesApp = () => (
     <SelectedNoteEditor />
   </div>
 )
-const notesApp = combineReducers({notes, selectedNote, visibilityFilter});
+const notesApp = combineReducers({
+  notes,
+  selectedNote,
+  notePreview,
+  visibilityFilter
+});
 const store = createStore(notesApp);
 store.dispatch(actions.addNote("Hello world"))
 

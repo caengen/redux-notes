@@ -3,7 +3,7 @@
     @include button-small-material;
   }
 
-  li:first-child {
+  .noteItem {
     @include material-shadow;
     text-decoration: none;
     list-style-type: none;

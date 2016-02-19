@@ -55,3 +55,12 @@ export const selectedNote = (state = 0, action) => {
       return state;
   }
 }
+
+export const notePreview = (state = '', action) => {
+  switch (action.type) {
+    case types.UPDATE_NOTE_PREVIEW:
+      return action.text;
+    default:
+      return state;
+  }
+}
