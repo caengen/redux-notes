@@ -33,6 +33,7 @@
 .btn-bar {
   @include span-columns(7);
   display: block;
+  padding-bottom: 1em;
 }
 
 .btn-bar-group {

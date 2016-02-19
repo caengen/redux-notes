@@ -20,6 +20,7 @@ const mapDispatchToSelectedNoteEditor = (dispatch) => {
     onSubmit: (text) => {
       if (!!text) {
         dispatch(actions.addNote(text));
+        dispatch(actions.updateNotePreview(''));
       }
     },
     compile: createMarkup
