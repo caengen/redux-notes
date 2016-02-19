@@ -1,4 +1,5 @@
 import expect from 'expect';
+import deepFreeze from 'deep-freeze';
 import * as actions from '../src/actions/NoteActions';
 import * as types from '../src/constants/ActionTypes';
 import * as noteStates from '../src/constants/NoteStates';
@@ -43,5 +44,22 @@ describe('actions', () => {
     expect(actions.deleteNote(id)).toEqual(expectedAction);
   });
 
-  //it('', () => {expect().toEqual()});
+  it('should create an action to update note preview', () => {
+    const text = 'the new text';
+    const expectedAction = {
+      type: types.UPDATE_NOTE_PREVIEW,
+      text
+    };
+    deepFreeze(expectedAction);
+    expect(actions.updateNotePreview(text)).toEqual(expectedAction);
+  });
+
+  it('should create an action to change a notes state', () => {
+    const expectedAction = {
+      type: types.TRANSFER_NOTE,
+      newState: types.DELETE_NOTE,
+      id: 1
+    };
+    expect(actions.transferNote(1, types.DELETE_NOTE)).toEqual(expectedAction);
+  });
 });

@@ -1,6 +1,7 @@
 .note {
   button {
-    @include button-small-material;
+    background-color: red;
+    color: white;
   }
 
   .noteItem {
@@ -16,8 +17,8 @@
     max-height: 10rem;
     padding: 0.5rem;
     @include material-shadow;
-
-    font-size: 0.4rem;
+    user-select: none;
+    zoom: 0.2;
 
     cursor: pointer;
   }

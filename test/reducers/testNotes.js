@@ -45,5 +45,5 @@ describe('notes reducer', () => {
     expect(
       notes(stateBefore, actions.transferNote(2, noteStates.NOTE_DELETED))
     ).toEqual(stateAfter);
-  })
+  });
 });
