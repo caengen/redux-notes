@@ -25,6 +25,13 @@ export const AwesomeBar = connect(
 const getMarkup = (type) => {
   switch (type) {
     case 'strong':
+    if (window.getSelection) {
+      try {
+          var ta = document.getElementById('editorTextarea');
+          console.log(ta.value.substring(ta.selectionStart, ta.selectionEnd));
+      } catch (e) {
+          console.log('Cant get selection text')
+      }}
       return '\n**strong**'
     case 'emphasis':
       return '\n__emphasized__'

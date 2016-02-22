@@ -1,5 +1,6 @@
 .notes-nav {
   @include span-columns(12);
+  font-weight: $weight-bold;
 
   .link {
     @include span-columns(4 of 12);

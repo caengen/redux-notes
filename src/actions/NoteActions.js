@@ -71,6 +71,15 @@ export const appendNotePreview = (text) => {
   }
 }
 
+export const sliceNotePreview = (begin, end, newSlice) => {
+  return {
+    type: types.SLICE_NOTE_PREVIEW,
+    begin,
+    end,
+    newSlice
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: types.SET_VISIBILITY_FILTER,

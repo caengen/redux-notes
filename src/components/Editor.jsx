@@ -6,7 +6,7 @@ export const Editor = ({text, onSubmit, onChange, compile}) => (
   <section className="editor">
     <section className="editor-viewer">
       <AwesomeBar />
-      <textarea value={text} onChange={onChange}/>
+      <textarea id="editorTextarea" value={text} onChange={onChange}/>
     </section>
     <button onClick={() => onSubmit(text)}>
       {'Save'}

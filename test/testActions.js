@@ -50,9 +50,23 @@ describe('actions', () => {
       type: types.UPDATE_NOTE_PREVIEW,
       text
     };
-    deepFreeze(expectedAction);
+    deepFreeze(text);
     expect(actions.updateNotePreview(text)).toEqual(expectedAction);
   });
+
+  it('should create an action to slice note preview', () => {
+    const begin = 8;
+    const end = 15;
+    const newSlice = 'this is the new slice';
+    const expectedAction = {
+      type: types.SLICE_NOTE_PREVIEW,
+      begin,
+      end,
+      newSlice
+    }
+
+    expect(actions.sliceNotePreview(begin, end, newSlice)).toEqual(expectedAction);
+  })
 
   it('should create an action to change a notes state', () => {
     const expectedAction = {
