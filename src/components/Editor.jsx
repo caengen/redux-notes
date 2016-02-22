@@ -6,38 +6,30 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    text: state.notePreview
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (e) => {
-      dispatch(actions.updateNotePreview(e.target.value));
-    }
   }
 }
 
-const _GrippieTextarea = ({text, onChange}) => {
-  return (
-    <div className="grippie-textarea">
-      <textarea id="editorTextarea" value={text} onChange={onChange} />
-      <div className="grippie"></div>
-    </div>
-  )
-}
+const _Grippie = ({text, onChange}) => (
+  <div className="grippie"></div>
+)
 
-export const GrippieTextarea = connect(
+export const Grippie = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_GrippieTextarea);
+)(_Grippie);
 
 export const Editor = ({text, onSubmit, onChange, compile}) => (
   <section className="editor">
     <section className="editor-viewer">
       <AwesomeBar />
-      <GrippieTextarea />
+      <textarea id="editorTextarea" value={text} onChange={onChange} />
     </section>
+    <Grippie />
     <section className="editor-submit">
       <button onClick={() => onSubmit(text)}>
         {'Save'}

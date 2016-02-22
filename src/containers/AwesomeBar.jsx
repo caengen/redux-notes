@@ -67,10 +67,10 @@ const getAction = (type) => {
     case 'web':
       return actions.appendNotePreview('\n<p>html</p>')
     case 'numbered':
-      slice = newSliceOrDefault('1. ', '', 'List item');
+      slice = newSliceOrDefault('\n1. ', '', 'List item');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'list':
-      slice = newSliceOrDefault('- ', '', 'List item');
+      slice = newSliceOrDefault('\n- ', '', 'List item');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'heading':
       slice = newSliceOrDefault('##', '##', 'Header');

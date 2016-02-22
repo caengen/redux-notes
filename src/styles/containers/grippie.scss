@@ -1,0 +1,9 @@
+.grippie {
+  @include span-columns(12);
+  margin-bottom: 1em;
+  border: 1px solid $mischka;
+  border: 0 1px 1px;
+  height: 0.5em;
+  background: $athens-gray;
+  cursor: n-resize;
+}

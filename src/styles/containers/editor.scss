@@ -4,23 +4,19 @@
   .editor-viewer {
     @include span-columns(12);
     padding: 1em;
-    margin-bottom: 1em;
     border: 1px solid $mischka;
+    border-bottom: 0;
 
     @media screen and (max-width: 570px) {
       padding: .5em;
     }
   }
-}
-
-.grippie-textarea {
-  @include span-columns(12);
-  @media screen and (max-width: 570px) {
-    @include span-columns(10.5);
-  }
 
   textarea {
-    width: 100%;
+    @include span-columns(12);
+    @media screen and (max-width: 570px) {
+      @include span-columns(10.5);
+    }
     height: 20rem;
     border: none;
     font-size: $base-font-size;

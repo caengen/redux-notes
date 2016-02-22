@@ -14,6 +14,9 @@ const mapStateToSelectedNoteEditor = (state) => {
 
 const mapDispatchToSelectedNoteEditor = (dispatch) => {
   return {
+    onChange: (e) => {
+      dispatch(actions.updateNotePreview(e.target.value));
+    },
     onSubmit: (text) => {
       if (!!text) {
         dispatch(actions.addNote(text));
