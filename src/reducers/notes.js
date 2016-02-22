@@ -60,6 +60,10 @@ export const notePreview = (state = '', action) => {
   switch (action.type) {
     case types.UPDATE_NOTE_PREVIEW:
       return action.text;
+    case types.APPEND_NOTE_PREVIEW:
+      return state + action.text;
+    case types.SLICE_NOTE_PREVIEW:
+      return state.slice(0, action.start) + action.newSlice + state.slice(action.end);
     default:
       return state;
   }

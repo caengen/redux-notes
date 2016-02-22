@@ -21,4 +21,17 @@ describe('note preview reducer', () => {
       notePreview(stateBefore, actions.updateNotePreview(stateAfter))
     ).toEqual(stateAfter);
   });
+
+  it('should handle SLICE_NOTE_PREVIEW', () => {
+    const stateBefore = 'this is the old text';
+    deepFreeze(stateBefore);
+    const stateAfter = 'this is new and improved text';
+    const start = 8;
+    const end = 15;
+    const newSlice = 'new and improved';
+
+    expect(
+      notePreview(stateBefore, actions.sliceNotePreview(start, end, newSlice))
+    ).toEqual(stateAfter);
+  });
 });
