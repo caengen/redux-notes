@@ -1,8 +1,9 @@
 import React from 'react';
 import * as actions from '../actions/NoteActions';
+import { connect } from 'react-redux';
 import { AwesomeBar } from '../containers/AwesomeBar.jsx';
 import { CompiledPreview } from './CompiledPreview.jsx';
-import { connect } from 'react-redux';
+import { Draggable } from '../containers/Draggable.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const _Grippie = ({text, onChange}) => (
+const _Grippie = () => (
   <div className="grippie"></div>
 )
 
@@ -25,10 +26,10 @@ export const Grippie = connect(
 
 export const Editor = ({text, onSubmit, onChange, compile}) => (
   <section className="editor">
-    <section className="editor-viewer">
+    <Draggable>
       <AwesomeBar />
       <textarea id="editorTextarea" value={text} onChange={onChange} />
-    </section>
+    </Draggable>
     <Grippie />
     <section className="editor-submit">
       <button onClick={() => onSubmit(text)}>
