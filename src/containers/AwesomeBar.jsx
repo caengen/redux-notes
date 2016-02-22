@@ -76,7 +76,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('##', '##', 'Header');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'hr':
-      return actions.appendNotePreview('\n----------')
+      return actions.appendNotePreview('\n\n----------')
     default:
       return '';
   }
