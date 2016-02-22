@@ -26,12 +26,12 @@ describe('note preview reducer', () => {
     const stateBefore = 'this is the old text';
     deepFreeze(stateBefore);
     const stateAfter = 'this is new and improved text';
-    const begin = 8;
+    const start = 8;
     const end = 15;
     const newSlice = 'new and improved';
 
     expect(
-      notePreview(stateBefore, actions.sliceNotePreview(begin, end, newSlice))
+      notePreview(stateBefore, actions.sliceNotePreview(start, end, newSlice))
     ).toEqual(stateAfter);
   });
 });

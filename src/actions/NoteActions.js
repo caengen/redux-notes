@@ -71,10 +71,10 @@ export const appendNotePreview = (text) => {
   }
 }
 
-export const sliceNotePreview = (begin, end, newSlice) => {
+export const sliceNotePreview = (start, end, newSlice) => {
   return {
     type: types.SLICE_NOTE_PREVIEW,
-    begin,
+    start,
     end,
     newSlice
   }
