@@ -60,7 +60,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('>', '', 'quote');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'code':
-      slice = newSliceOrDefault('```', '```', 'code');
+      slice = newSliceOrDefault('```\n', '\n```', 'code');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'image':
       return actions.appendNotePreview('\n>![alt text](https://path/name.png "Title here")')

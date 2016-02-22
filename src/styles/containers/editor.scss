@@ -11,13 +11,16 @@
       padding: .5em;
     }
   }
+}
+
+.grippie-textarea {
+  @include span-columns(12);
+  @media screen and (max-width: 570px) {
+    @include span-columns(10.5);
+  }
 
   textarea {
-    @include span-columns(12);
-    @media screen and (max-width: 570px) {
-      @include span-columns(10.5);
-    }
-
+    width: 100%;
     height: 20rem;
     border: none;
     font-size: $base-font-size;
@@ -42,4 +45,5 @@
   padding: 1em 0;
   border-top: 1px solid $mischka;
   border-bottom: 1px solid $mischka;
+  overflow-wrap: break-word;
 }
