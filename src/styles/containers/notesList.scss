@@ -1,4 +1,5 @@
 .notes-list {
-  @include ul-sidebar($white, $black, $white, $black);
+  @include ul-sidebar($black, $black, $white, $black);
   @include span-columns(12);
+  transition: all .2 ease-in-out;
 }

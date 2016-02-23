@@ -1,8 +1,15 @@
 .notes-nav {
   @include span-columns(12);
   font-weight: $weight-bold;
-
+  padding: .5em;
+  a {
+    color: $gray;
+    text-decoration: none;
+  }
+  span {
+    color: $white;
+  }
   .link {
-    @include span-columns(4 of 12);
+    padding-right: 1rem;
   }
 }

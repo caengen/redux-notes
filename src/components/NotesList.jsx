@@ -15,9 +15,9 @@ const Note = ({markup, noteState, onClick, onChangeState}) => (
       <article dangerouslySetInnerHTML={markup}>
       </article>
     </li>
-    <button onClick={onChangeState}>
+    {/* <button onClick={onChangeState}>
       {noteState === noteStates.NOTE_CREATED ? 'Delete' : 'Restore'}
-    </button>
+     </button>*/}
   </div>
 )
 
