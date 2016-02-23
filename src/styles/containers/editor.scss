@@ -23,6 +23,7 @@
     font-size: $base-font-size;
     font-family: $base-font-family;
     color: $black;
+    resize: none;
     &:focus {
       outline: none;
     }
@@ -43,4 +44,30 @@
   border-top: 1px solid $mischka;
   border-bottom: 1px solid $mischka;
   overflow-wrap: break-word;
+
+  a {
+    color: $accent-color;
+    text-decoration: inherit;
+
+    &:hover {
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0.75em;
+    border-left: 2px solid $accent-color;
+    background: $light-accent-color;
+    p {
+      margin: 0;
+    }
+  }
+
+  code {
+    display: block;
+    padding: 0.75em;
+    background: $black;
+    color: white;
+  }
 }

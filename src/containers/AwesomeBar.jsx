@@ -52,7 +52,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('**', '**', 'strong');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'emphasis':
-      slice = newSliceOrDefault('__', '__', 'emphasized');
+      slice = newSliceOrDefault('_', '_', 'emphasized');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'link':
       return actions.appendNotePreview('\n[Link](https://www.google.com "Google\'s Homepage")');
@@ -60,7 +60,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('>', '', 'quote');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'code':
-      slice = newSliceOrDefault('```\n', '\n```', 'code');
+      slice = newSliceOrDefault('```\n', '\n```', "{ hello: 'world' }");
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'image':
       return actions.appendNotePreview('\n>![alt text](https://path/name.png "Title here")')
