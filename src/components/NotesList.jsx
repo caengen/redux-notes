@@ -32,7 +32,7 @@ const NotesList = ({notes, onNoteClick, onNoteChangeState}) => {
           {...note}
           markup={createMarkup(note.text)}
           key={note.id}
-          onClick={() => onNoteClick(note.id)}
+          onClick={() => onNoteClick(note.text)}
           onChangeState={() => onNoteChangeState(note.id, newState)}
         />
       })}
@@ -51,8 +51,8 @@ const mapStateToVisibleNotesListProps = (state) => {
 
 const mapDispatchToVisibleNotesListProps = (dispatch) => {
   return {
-    onNoteClick: (id) => {
-      dispatch(actions.setSelectedNote(id));
+    onNoteClick: (text) => {
+      dispatch(actions.updateNotePreview(text));
     },
     onNoteChangeState: (id, newState) => {
       dispatch(actions.transferNote(id, newState));

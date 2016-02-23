@@ -8,7 +8,7 @@ export const ButtonBar = ({text, onClick}) => {
         <i className="material-icons" title={'Emphasis <em>'} onClick={() => {onClick('emphasis')}}>format_italic</i>
       </section>
       <section className="btn-bar-group">
-        <i className="material-icons" title={'Hyperlik <a>'} onClick={() => {onClick('link')}}>insert_link</i>
+        <i className="material-icons" title={'Hyperlink <a>'} onClick={() => {onClick('link')}}>insert_link</i>
         <i className="material-icons" title={'Blockquote <blockquote>'} onClick={() => {onClick('quote')}}>format_quote</i>
         <i className="material-icons" title={'Code sample <pre><code>'} onClick={() => {onClick('code')}}>code</i>
         <i className="material-icons" title={'Image <img>'} onClick={() => {onClick('image')}}>image</i>

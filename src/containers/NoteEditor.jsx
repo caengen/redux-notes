@@ -6,13 +6,13 @@ import marked from 'marked';
 import _ from 'underscore';
 import { Editor } from '../components/Editor.jsx';
 
-const mapStateToSelectedNoteEditor = (state) => {
+const mapStateToProps = (state) => {
   return {
     text: state.notePreview
   }
 }
 
-const mapDispatchToSelectedNoteEditor = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onChange: (e) => {
       dispatch(actions.updateNotePreview(e.target.value));
@@ -28,6 +28,6 @@ const mapDispatchToSelectedNoteEditor = (dispatch) => {
 }
 
 export const NoteEditor = connect(
-  mapStateToSelectedNoteEditor,
-  mapDispatchToSelectedNoteEditor
+  mapStateToProps,
+  mapDispatchToProps
 )(Editor);

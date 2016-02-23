@@ -4,8 +4,8 @@
   .editor-viewer {
     @include span-columns(12);
     padding: 1em;
-    margin-bottom: 1em;
     border: 1px solid $mischka;
+    border-bottom: 0;
 
     @media screen and (max-width: 570px) {
       padding: .5em;
@@ -23,6 +23,7 @@
     font-size: $base-font-size;
     font-family: $base-font-family;
     color: $black;
+    resize: none;
     &:focus {
       outline: none;
     }
@@ -42,4 +43,31 @@
   padding: 1em 0;
   border-top: 1px solid $mischka;
   border-bottom: 1px solid $mischka;
+  overflow-wrap: break-word;
+
+  a {
+    color: $accent-color;
+    text-decoration: inherit;
+
+    &:hover {
+      border-bottom: 1px solid $accent-color;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0.75em;
+    border-left: 2px solid $accent-color;
+    background: $light-accent-color;
+    p {
+      margin: 0;
+    }
+  }
+
+  code {
+    display: block;
+    padding: 0.75em;
+    background: $black;
+    color: white;
+  }
 }

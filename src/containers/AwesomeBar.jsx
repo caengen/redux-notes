@@ -52,7 +52,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('**', '**', 'strong');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'emphasis':
-      slice = newSliceOrDefault('__', '__', 'emphasized');
+      slice = newSliceOrDefault('_', '_', 'emphasized');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'link':
       return actions.appendNotePreview('\n[Link](https://www.google.com "Google\'s Homepage")');
@@ -60,17 +60,17 @@ const getAction = (type) => {
       slice = newSliceOrDefault('>', '', 'quote');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'code':
-      slice = newSliceOrDefault('```', '```', 'code');
+      slice = newSliceOrDefault('```\n', '\n```', "{ hello: 'world' }");
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'image':
       return actions.appendNotePreview('\n>![alt text](https://path/name.png "Title here")')
     case 'web':
       return actions.appendNotePreview('\n<p>html</p>')
     case 'numbered':
-      slice = newSliceOrDefault('1. ', '', 'List item');
+      slice = newSliceOrDefault('\n1. ', '', 'List item');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'list':
-      slice = newSliceOrDefault('- ', '', 'List item');
+      slice = newSliceOrDefault('\n- ', '', 'List item');
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'heading':
       slice = newSliceOrDefault('##', '##', 'Header');
