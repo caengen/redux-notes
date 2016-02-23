@@ -17,6 +17,7 @@
     @media screen and (max-width: 570px) {
       @include span-columns(10.5);
     }
+
     height: 20rem;
     border: none;
     font-size: $base-font-size;
