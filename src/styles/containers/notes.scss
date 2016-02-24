@@ -1,5 +1,6 @@
 .notes {
-    @include span-columns(12);
+    @include shift(1.5);
+    @include span-columns(9);
     background: $black;
     border-radius: 6px 6px 0 0;
 }
