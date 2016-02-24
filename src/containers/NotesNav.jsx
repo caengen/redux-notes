@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { FilterLink } from '../components/Link.jsx';
+import { FilterLink } from './FilterLink.jsx';
 import * as noteStates from '../constants/NoteStates';
 
 export const NotesNav = () => (

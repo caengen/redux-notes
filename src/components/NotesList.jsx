@@ -6,7 +6,7 @@ import { createMarkup } from '../constants/helper';
 import marked from 'marked';
 
 const getVisibleNotes = (notes, visibilityFilter) => {
-  return notes.filter(n => n.noteState === visibilityFilter);
+  return notes.filter(n => n.noteState === visibilityFilter.filter);
 }
 
 const Note = ({markup, noteState, onClick, onChangeState}) => (
@@ -21,10 +21,14 @@ const Note = ({markup, noteState, onClick, onChangeState}) => (
   </div>
 )
 
-const NotesList = ({notes, onNoteClick, onNoteChangeState}) => {
-
+const NotesList = ({notes, isOpen, onNoteClick, onNoteChangeState}) => {
+  if (!isOpen || !notes.length) {
+    console.log('notes list is closed!')
+    return (<ul className={"notes-list"}></ul>)
+  }
+  
   return (
-    <ul className="notes-list">
+    <ul className={"notes-list open"}>
       {notes.map(note => {
         const newState = note.noteState === noteStates.NOTE_CREATED ? noteStates.NOTE_DELETED : noteStates.NOTE_CREATED;
         /* spread applies all properties of note e.g. text={note.text} noteState={note.noteState} */
@@ -45,7 +49,8 @@ const mapStateToVisibleNotesListProps = (state) => {
     notes: getVisibleNotes(
       state.notes,
       state.visibilityFilter
-    )
+    ),
+    isOpen: state.visibilityFilter.isOpen
   };
 };
 

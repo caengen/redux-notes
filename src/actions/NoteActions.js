@@ -86,3 +86,9 @@ export const setVisibilityFilter = (filter) => {
     filter
   }
 }
+
+export const toggleVisibilityFilter = () => {
+  return {
+    type: types.TOGGLE_VISIBILITY_FILTER
+  }
+}
