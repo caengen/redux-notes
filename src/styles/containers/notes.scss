@@ -1,6 +1,11 @@
 .notes {
     @include shift(1.5);
     @include span-columns(9);
+    @media screen and (max-width: 570px) {
+      @include shift(0);
+      @include span-columns(12);
+    }
+
     background: $black;
     border-radius: 6px 6px 0 0;
 }

@@ -63,7 +63,7 @@ const getAction = (type) => {
       slice = newSliceOrDefault('```\n', '\n```', "{ hello: 'world' }");
       return actions.sliceNotePreview(slice.start, slice.end, slice.slice);
     case 'image':
-      return actions.appendNotePreview('\n>![alt text](https://path/name.png "Title here")')
+      return actions.appendNotePreview('\n![alt text](https://path/name.png "Title here")')
     case 'web':
       return actions.appendNotePreview('\n<p>html</p>')
     case 'numbered':

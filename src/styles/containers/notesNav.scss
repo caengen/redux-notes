@@ -2,12 +2,14 @@
   @include span-columns(12);
   font-weight: $weight-bold;
   padding: .5em;
+  user-select: none;
   a {
     color: $gray;
     text-decoration: none;
   }
   span {
     color: $white;
+    cursor: pointer;
   }
   .link {
     padding-right: 1rem;

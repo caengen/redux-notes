@@ -23,10 +23,9 @@ const Note = ({markup, noteState, onClick, onChangeState}) => (
 
 const NotesList = ({notes, isOpen, onNoteClick, onNoteChangeState}) => {
   if (!isOpen || !notes.length) {
-    console.log('notes list is closed!')
     return (<ul className={"notes-list"}></ul>)
   }
-  
+
   return (
     <ul className={"notes-list open"}>
       {notes.map(note => {

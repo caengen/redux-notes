@@ -9,7 +9,11 @@ import * as types from '../constants/ActionTypes';
   }
 }*/
 
-export const visibilityFilter = (state, action) => {
+const initialState = {
+  filter: 'NOTE_CREATED',
+  isOpen: true
+};
+export const visibilityFilter = (state = initialState, action) => {
   switch (action.type) {
     case types.SET_VISIBILITY_FILTER:
       return {
@@ -22,9 +26,6 @@ export const visibilityFilter = (state, action) => {
           isOpen: !state.isOpen
       };
     default:
-      return {
-        filter: 'NOTE_CREATED',
-        isOpen: true
-      };
+      return state;
   }
 }

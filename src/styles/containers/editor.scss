@@ -3,6 +3,11 @@
   @include span-columns(9);
   box-shadow: 0 -2px 4px -4px black;
 
+  @media screen and (max-width: 570px) {
+    @include shift(0);
+    @include span-columns(12);
+  }
+
   .editor-viewer {
     @include span-columns(12);
     padding: 1em;
@@ -18,7 +23,7 @@
   textarea {
     @include span-columns(12);
     @media screen and (max-width: 570px) {
-      @include span-columns(10.5);
+      @include span-columns(11);
     }
     padding: .5em;
     height: 20em;

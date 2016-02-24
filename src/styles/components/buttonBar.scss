@@ -6,7 +6,7 @@
   }
 
   @media screen and (max-width: 570px) {
-    @include span-columns(1.5);
+    @include span-columns(1);
     float: right;
   }
 }
