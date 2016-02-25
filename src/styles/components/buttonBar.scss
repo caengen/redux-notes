@@ -11,9 +11,7 @@
   }
 }
 
-.btn-bar-group {
-  display: inline-block;
-  padding-right: 2em;
+.icon-button {
   i {
     cursor: pointer;
     user-select: none;
@@ -22,4 +20,10 @@
       color: $accent-color;
     }
   }
+}
+
+.btn-bar-group {
+  display: inline-block;
+  padding-right: 2em;
+  @extend .icon-button;
 }

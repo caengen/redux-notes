@@ -1,9 +1,5 @@
 .note {
-  button {
-    background-color: red;
-    color: white;
-  }
-
+  display: inline-block;
   .noteItem {
     @include span-columns(12);
     @include material-shadow;
@@ -18,6 +14,7 @@
     zoom: 0.2;
     background: white;
     cursor: pointer;
+    word-wrap: break-word;
 
     a {
       color: $accent-color;
@@ -43,6 +40,20 @@
       padding: 0.75em;
       background: $black;
       color: white;
+    }
+  }
+
+  .action-group { display: none; }
+  &:hover {
+    .action-group {
+      display: inline;
+      padding-top: em(6px);
+      @include span-columns(1);
+      @extend .icon-button;
+      i {
+        font-size: em(16px);
+        color: white;
+      }
     }
   }
 }
