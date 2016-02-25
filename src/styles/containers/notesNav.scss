@@ -15,3 +15,13 @@
     padding-right: 1rem;
   }
 }
+
+.number-display {
+  display: inline;
+  margin-right: 1rem;
+  color: white;
+  border-radius: 50%;
+  padding: em(3px) em(6px);
+  line-height: 0px;
+  @include font-size(1);
+}

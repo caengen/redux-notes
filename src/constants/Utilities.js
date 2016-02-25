@@ -14,3 +14,7 @@ export const createMarkup = (text) => {
     __html: marked(text)
   }
 }
+
+export const getVisibleNotes = (notes, visibilityFilter) => {
+  return notes.filter(n => n.noteState === visibilityFilter.filter);
+}

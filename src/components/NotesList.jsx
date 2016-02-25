@@ -2,12 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as noteStates from '../constants/NoteStates';
 import * as actions from '../actions/NoteActions';
-import { createMarkup } from '../constants/helper';
+import { createMarkup, getVisibleNotes } from '../constants/Utilities';
 import marked from 'marked';
-
-const getVisibleNotes = (notes, visibilityFilter) => {
-  return notes.filter(n => n.noteState === visibilityFilter.filter);
-}
 
 const Note = ({markup, noteState, onClick, onChangeState}) => (
   <div className="note">
