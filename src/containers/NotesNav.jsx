@@ -1,14 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { FilterLink } from './FilterLink.jsx';
+import { NumberDisplay } from '../components/NumberDisplay.jsx'
 import * as noteStates from '../constants/NoteStates';
 import { createMarkup, getVisibleNotes } from '../constants/Utilities';
-
-export const NumberDisplay = ({children}) => (
-  <div className="number-display">
-    {children}
-  </div>
-)
 
 export const _NotesNav = ({notesCount}) => (
   <div className="notes-nav">
