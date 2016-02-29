@@ -42,6 +42,7 @@ export const addDraft = (text) => {
     text
   }
 }
+
 export const deleteNote = (id) => {
   return {
     type: types.DELETE_NOTE,
@@ -63,9 +64,31 @@ export const updateNotePreview = (text) => {
   }
 }
 
+export const appendNotePreview = (text) => {
+  return {
+    type: types.APPEND_NOTE_PREVIEW,
+    text
+  }
+}
+
+export const sliceNotePreview = (start, end, newSlice) => {
+  return {
+    type: types.SLICE_NOTE_PREVIEW,
+    start,
+    end,
+    newSlice
+  }
+}
+
 export const setVisibilityFilter = (filter) => {
   return {
     type: types.SET_VISIBILITY_FILTER,
     filter
+  }
+}
+
+export const toggleVisibilityFilter = () => {
+  return {
+    type: types.TOGGLE_VISIBILITY_FILTER
   }
 }

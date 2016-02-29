@@ -1,0 +1,29 @@
+.btn-bar {
+  @include span-columns(9);
+  display: block;
+  @media screen and (max-width: 750px) {
+    @include span-columns(12);
+  }
+
+  @media screen and (max-width: 570px) {
+    @include span-columns(1);
+    float: right;
+  }
+}
+
+.icon-button {
+  i {
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      transition: all .2s ease;
+      color: $accent-color;
+    }
+  }
+}
+
+.btn-bar-group {
+  display: inline-block;
+  padding-right: 2em;
+  @extend .icon-button;
+}
