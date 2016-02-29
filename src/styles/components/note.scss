@@ -1,26 +1,20 @@
 .note {
-  button {
-    background-color: red;
-    color: white;
-  }
-
+  display: inline-block;
   .noteItem {
+    @include span-columns(12);
     @include material-shadow;
     text-decoration: none;
     list-style-type: none;
     overflow: hidden;
-
-    margin: 0.1rem;
-    margin-top: 0.5rem;
-    max-width: 7rem;
-    min-height: 5rem;
-    max-height: 10rem;
-    padding: 0.5rem;
-    @include material-shadow;
+    margin: 1em;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.25rem;
     user-select: none;
     zoom: 0.2;
-
+    background: white;
     cursor: pointer;
+    word-wrap: break-word;
 
     a {
       color: $accent-color;
@@ -46,6 +40,20 @@
       padding: 0.75em;
       background: $black;
       color: white;
+    }
+  }
+
+  .action-group { display: none; }
+  &:hover {
+    .action-group {
+      display: inline;
+      padding-top: em(6px);
+      @include span-columns(1);
+      @extend .icon-button;
+      i {
+        font-size: em(16px);
+        color: white;
+      }
     }
   }
 }

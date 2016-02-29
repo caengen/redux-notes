@@ -1,8 +1,40 @@
 .notes-nav {
   @include span-columns(12);
   font-weight: $weight-bold;
+  padding: .5em;
+  user-select: none;
+  a {
+    color: $gray;
+    text-decoration: none;
 
-  .link {
-    @include span-columns(4 of 12);
+    div {
+      padding-top: 3px;
+      display: inline-block;
+    }
   }
+  span {
+    color: $white;
+    cursor: pointer;
+  }
+  .link {
+    padding-right: 1rem;
+  }
+
+}
+
+.number-display {
+  display: inline;
+  margin-right: 1rem;
+  color: white;
+  border-radius: 50%;
+  padding: em(3px) em(6px);
+  line-height: 0px;
+  @include font-size(1);
+}
+
+.settings {
+  float: right;
+  cursor: pointer;
+  @extend .icon-button;
+  color: white;
 }

@@ -1,4 +1,11 @@
 .notes-list {
-  @include ul-sidebar($white, $black, $white, $black);
+  @include ul-sidebar($black, $black, $white, $black);
   @include span-columns(12);
+  max-height: 0;
+  &.open {
+    box-shadow: inset 0 2px 4px -2px black;
+    overflow-y: hidden;
+    max-height: 58px;
+    transition: max-height .2s ease-in-out;
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import * as actions from '../actions/NoteActions';
 import { connect } from 'react-redux';
-import { createMarkup } from '../constants/helper';
+import { createMarkup } from '../constants/Utilities';
 import marked from 'marked';
 import _ from 'underscore';
 import { Editor } from '../components/Editor.jsx';

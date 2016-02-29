@@ -1,20 +1,17 @@
 .btn-bar {
   @include span-columns(9);
   display: block;
-  padding-bottom: 1em;
   @media screen and (max-width: 750px) {
     @include span-columns(12);
   }
 
   @media screen and (max-width: 570px) {
-    @include span-columns(1.5);
+    @include span-columns(1);
     float: right;
   }
 }
 
-.btn-bar-group {
-  display: inline-block;
-  padding-right: 2em;
+.icon-button {
   i {
     cursor: pointer;
     user-select: none;
@@ -23,4 +20,10 @@
       color: $accent-color;
     }
   }
+}
+
+.btn-bar-group {
+  display: inline-block;
+  padding-right: 2em;
+  @extend .icon-button;
 }
