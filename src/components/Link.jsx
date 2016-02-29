@@ -20,7 +20,7 @@ export const Link = ({children, active, onLinkClick, onSpanClick}) => {
       onLinkClick();
     }}
     >
-      {children}
+    <div>{children}</div>
     </a>
   )
 }

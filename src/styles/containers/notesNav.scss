@@ -6,6 +6,11 @@
   a {
     color: $gray;
     text-decoration: none;
+
+    div {
+      padding-top: 3px;
+      display: inline-block;
+    }
   }
   span {
     color: $white;
@@ -14,6 +19,7 @@
   .link {
     padding-right: 1rem;
   }
+
 }
 
 .number-display {
@@ -24,4 +30,11 @@
   padding: em(3px) em(6px);
   line-height: 0px;
   @include font-size(1);
+}
+
+.settings {
+  float: right;
+  cursor: pointer;
+  @extend .icon-button;
+  color: white;
 }

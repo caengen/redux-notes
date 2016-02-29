@@ -22,6 +22,7 @@ export const _NotesNav = ({notesCount}) => (
     <FilterLink filter={noteStates.NOTE_DELETED}>
       Bin
     </FilterLink>
+    <i className="material-icons settings">settings</i>
   </div>
 )
 
